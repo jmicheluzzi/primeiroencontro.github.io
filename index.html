@@ -125,10 +125,14 @@ h1 {
     </div>
 </div>
 <script>
-const startDate = new Date("2025-06-22");
-const today = new Date();
+const startDate = new Date(2025, 5, 22);
+
+const now = new Date();
+const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
 const diff = today - startDate;
-const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+const days = Math.round(diff / 86400000);
+
 document.getElementById("counter").innerText = days;
 </script>
 </body>
